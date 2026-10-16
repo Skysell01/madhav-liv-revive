@@ -12,7 +12,7 @@
 // ==============================================================================
 // GOOGLE SHEETS WEBHOOK CONFIGURATION
 // ==============================================================================
-const GOOGLE_SHEETS_WEBHOOK_URL = ''; // Paste your deployed Web App URL here
+const GOOGLE_SHEETS_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbxXE6vxtMT09S1eQDsL0KMEY7nMSsFhYFTc_uX9YamRQeuyv6Xvu5Uowu3pdHVaUkKbwQ/exec';
 
 // Local Storage Key & 24 Hours Cooldown (24 * 60 * 60 * 1000 ms)
 const SUBMITTED_CONTACTS_KEY = 'madhavbaug_livo_safe_contacts_24h';
