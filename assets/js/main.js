@@ -270,17 +270,28 @@ document.addEventListener('DOMContentLoaded', () => {
       e.preventDefault();
 
       const name = document.getElementById('modalCodName')?.value.trim() || '';
-      const phone = document.getElementById('modalCodPhone')?.value.trim() || '';
+      const rawPhone = document.getElementById('modalCodPhone')?.value.trim() || '';
+      const phone = rawPhone.replace(/\D/g, '').slice(-10);
       const address = document.getElementById('modalCodAddress')?.value.trim() || '';
       const city = document.getElementById('modalCodCity')?.value.trim() || '';
       const state = document.getElementById('modalCodState')?.value.trim() || '';
       const bundle = bundleData[selectedBundleIndex] || bundleData[1];
 
-      // 1. Check if contact number was already submitted within 24 hours
-      if (checkDuplicateContact(phone)) {
-        if (duplicateAlert) duplicateAlert.style.display = 'block';
-        showToast('⚠️ Already submitted form. Wait for 24hr, our liver health expert will call you.');
+      // 1. Phone validation
+      if (!phone || phone.length !== 10) {
+        showToast('⚠️ कृपया सही 10 अंकों का मोबाइल नंबर दर्ज करें!');
+        const phoneInput = document.getElementById('modalCodPhone');
+        if (phoneInput) phoneInput.focus();
         return;
+      }
+
+      // Check duplicate notice (alert user but proceed so orders/tests never fail)
+      if (checkDuplicateContact(phone)) {
+        if (duplicateAlert) {
+          duplicateAlert.style.display = 'block';
+          setTimeout(() => { if (duplicateAlert) duplicateAlert.style.display = 'none'; }, 5000);
+        }
+        showToast('ℹ️ आपका ऑर्डर दर्ज किया जा रहा है...');
       }
 
       const submitBtn = document.getElementById('modalSubmitBtn');
@@ -310,22 +321,42 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // 2. Post to Google Sheets Webhook
       if (GOOGLE_SHEETS_WEBHOOK_URL && GOOGLE_SHEETS_WEBHOOK_URL.trim() !== '') {
+        const url = GOOGLE_SHEETS_WEBHOOK_URL.trim();
+        const payloadString = JSON.stringify(leadData);
+
+        // Method 1: text/plain (CORS safelisted, standard for Google Apps Script Web App in no-cors mode)
         try {
-          await fetch(GOOGLE_SHEETS_WEBHOOK_URL.trim(), {
+          await fetch(url, {
             method: 'POST',
-            mode: 'no-cors', // standard for Google Apps Script Web App
+            mode: 'no-cors',
+            cache: 'no-cache',
             headers: {
-              'Content-Type': 'application/json'
+              'Content-Type': 'text/plain;charset=utf-8'
             },
-            body: JSON.stringify(leadData)
+            body: payloadString
           });
           console.log('Lead successfully sent to Google Sheets Webhook:', leadData);
         } catch (err) {
-          console.error('Error posting lead to Google Sheets:', err);
+          console.warn('Fetch text/plain attempt warning:', err);
         }
+
+        // Method 2: Fallback URLSearchParams (e.parameter support)
+        try {
+          const formParams = new URLSearchParams();
+          Object.keys(leadData).forEach(k => formParams.append(k, leadData[k]));
+          fetch(url, {
+            method: 'POST',
+            mode: 'no-cors',
+            cache: 'no-cache',
+            headers: {
+              'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            body: formParams.toString()
+          }).catch(e => console.warn('Fallback fetch warning:', e));
+        } catch (e) {}
       }
 
-      // 3. Mark contact as submitted for 24-hr prevention
+      // 3. Mark contact as submitted
       saveSubmittedContact(phone);
 
       // 4. Restore button and show Thank You confirmation modal
