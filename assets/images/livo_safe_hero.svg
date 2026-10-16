@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FAF6F0"/>
+      <stop offset="50%" stop-color="#F4EDE3"/>
+      <stop offset="100%" stop-color="#EBE1D4"/>
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#7E1826"/>
+      <stop offset="100%" stop-color="#4F0A14"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#DCA06B"/>
+      <stop offset="50%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#C68246"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#4F0A14" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="800" fill="url(#bgGrad)"/>
+  
+  <!-- Subtle Circular Pattern -->
+  <circle cx="400" cy="400" r="340" fill="none" stroke="#7E1826" stroke-width="2" stroke-dasharray="8 8" opacity="0.25"/>
+  <circle cx="400" cy="400" r="280" fill="none" stroke="#C68246" stroke-width="1.5" opacity="0.35"/>
+
+  <!-- Main Product Box Mockup -->
+  <g filter="url(#shadow)">
+    <!-- Main Box Container -->
+    <rect x="220" y="160" width="360" height="480" rx="24" fill="url(#cardGrad)" stroke="#C68246" stroke-width="3"/>
+    
+    <!-- Top Gold Ribbon -->
+    <path d="M 220 184 A 24 24 0 0 1 244 160 L 556 160 A 24 24 0 0 1 580 184 L 580 230 L 220 230 Z" fill="url(#goldGrad)"/>
+    <text x="400" y="202" font-family="'Plus Jakarta Sans', sans-serif" font-size="16" font-weight="800" fill="#23201D" text-anchor="middle" letter-spacing="2">MADHAVBAUG CLINICAL CARE</text>
+    <text x="400" y="222" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="800" fill="#580C17" text-anchor="middle">100% AYURVEDIC LIVER DETOX</text>
+
+    <!-- Center Icon & Liver Shield Graphic -->
+    <circle cx="400" cy="330" r="64" fill="#580C17" stroke="#DCA06B" stroke-width="2.5"/>
+    <!-- Stylized Liver / Leaf Silhouette -->
+    <path d="M370 330 C360 300 400 290 420 310 C445 295 455 330 435 355 C410 380 375 365 370 330 Z" fill="#DCA06B"/>
+    <path d="M380 335 Q400 320 425 330" stroke="#580C17" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <!-- Bottle Silhouette in Center -->
+    <rect x="390" y="315" width="20" height="42" rx="4" fill="#FFFFFF"/>
+    <rect x="394" y="307" width="12" height="8" rx="2" fill="#F59E0B"/>
+
+    <!-- Title on Box -->
+    <text x="400" y="440" font-family="'Plus Jakarta Sans', sans-serif" font-size="28" font-weight="900" fill="#FFFFFF" text-anchor="middle" letter-spacing="1">LIVO-O-SAFE</text>
+    <text x="400" y="470" font-family="'Plus Jakarta Sans', sans-serif" font-size="18" font-weight="700" fill="#DCA06B" text-anchor="middle" letter-spacing="3">DAILY HERBAL SHOTS</text>
+    
+    <line x1="280" y1="495" x2="520" y2="495" stroke="#931F30" stroke-width="1.5"/>
+
+    <!-- Key Indications -->
+    <text x="400" y="525" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="600" fill="#FAF6F0" text-anchor="middle">🌿 Fatty Liver (Grade 1 &amp; 2) Support</text>
+    <text x="400" y="550" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="600" fill="#FAF6F0" text-anchor="middle">📉 SGOT &amp; SGPT Enzyme Normalizer</text>
+    <text x="400" y="575" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="600" fill="#FAF6F0" text-anchor="middle">⚡ Deep Cellular Liver Rejuvenation</text>
+
+    <!-- Bottom Badge -->
+    <rect x="250" y="600" width="300" height="26" rx="6" fill="#580C17"/>
+    <text x="400" y="618" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="800" fill="#FCD34D" text-anchor="middle">PACK OF 30 SHOTS (30 DAYS COURSE)</text>
+  </g>
+
+  <!-- Side Floating Bottles -->
+  <g transform="translate(130, 360) rotate(-15)">
+    <rect x="0" y="0" width="60" height="150" rx="14" fill="#7E1826" stroke="#DCA06B" stroke-width="2"/>
+    <rect x="15" y="-12" width="30" height="16" rx="4" fill="#D97706"/>
+    <text x="30" y="70" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="800" fill="#FFFFFF" text-anchor="middle">30 ml</text>
+    <text x="30" y="90" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="700" fill="#FCD34D" text-anchor="middle">LIVO</text>
+  </g>
+
+  <g transform="translate(610, 360) rotate(15)">
+    <rect x="0" y="0" width="60" height="150" rx="14" fill="#7E1826" stroke="#DCA06B" stroke-width="2"/>
+    <rect x="15" y="-12" width="30" height="16" rx="4" fill="#D97706"/>
+    <text x="30" y="70" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="800" fill="#FFFFFF" text-anchor="middle">30 ml</text>
+    <text x="30" y="90" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="700" fill="#FCD34D" text-anchor="middle">SHOT</text>
+  </g>
+
+  <!-- Top Floating Tag -->
+  <rect x="250" y="70" width="300" height="48" rx="24" fill="#FFFFFF" stroke="#7E1826" stroke-width="2" filter="url(#shadow)"/>
+  <text x="400" y="100" font-family="'Plus Jakarta Sans', sans-serif" font-size="16" font-weight="800" fill="#7E1826" text-anchor="middle">📸 IMAGE PLACEHOLDER: PRODUCT HERO</text>
+
+  <!-- Bottom Helper Note -->
+  <text x="400" y="750" font-family="'Plus Jakarta Sans', sans-serif" font-size="15" font-weight="700" fill="#7E1826" text-anchor="middle">Drop high-res packaging image here (800x800px)</text>
+</svg>

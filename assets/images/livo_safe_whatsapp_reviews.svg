@@ -1,0 +1,135 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 650" width="100%" height="100%">
+  <defs>
+    <linearGradient id="waBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#E5DDD5"/>
+      <stop offset="100%" stop-color="#D1C7BD"/>
+    </linearGradient>
+    <filter id="waShadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="650" fill="url(#waBg)"/>
+
+  <!-- Top Banner Bar -->
+  <rect x="0" y="0" width="1200" height="70" fill="#075E54"/>
+  <text x="600" y="44" font-family="'Plus Jakarta Sans', sans-serif" font-size="20" font-weight="800" fill="#FFFFFF" text-anchor="middle">
+    📸 VERIFIED WHATSAPP REVIEWS &amp; LFT LAB REPORTS PLACEHOLDER
+  </text>
+
+  <!-- 3 WhatsApp Chat Mockup Cards -->
+  <!-- Chat 1: Fatty Liver Reversal -->
+  <g transform="translate(60, 105)" filter="url(#waShadow)">
+    <rect width="340" height="490" rx="14" fill="#FFFFFF"/>
+    <!-- Chat Header -->
+    <rect width="340" height="60" rx="14" fill="#128C7E"/>
+    <circle cx="35" cy="30" r="18" fill="#ECE5DD"/>
+    <text x="35" y="36" font-size="16" text-anchor="middle">👨</text>
+    <text x="65" y="27" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="700" fill="#FFFFFF">राजेश वर्मा (उम्र 46)</text>
+    <text x="65" y="45" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="500" fill="#DCF8C6">कानपुर, यूपी • Verified Patient</text>
+
+    <!-- Message Bubble 1 -->
+    <rect x="15" y="80" width="280" height="90" rx="10" fill="#DCF8C6"/>
+    <text x="25" y="105" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="600" fill="#111827">नमस्ते डॉक्टर साहब! मैंने 2 महीने</text>
+    <text x="25" y="125" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="600" fill="#111827">Livo-O-Safe Shots का कोर्स किया।</text>
+    <text x="25" y="145" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="800" fill="#047857">कल USG अल्ट्रासाउंड कराया है।</text>
+    <text x="260" y="160" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" fill="#6B7280">10:14 AM</text>
+
+    <!-- Image Attachment Mockup -->
+    <rect x="15" y="185" width="280" height="150" rx="10" fill="#E2E8F0" stroke="#CBD5E1"/>
+    <rect x="25" y="195" width="260" height="30" rx="6" fill="#065F46"/>
+    <text x="155" y="215" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="700" fill="#FFFFFF" text-anchor="middle">USG WHOLE ABDOMEN REPORT</text>
+    <text x="155" y="255" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="800" fill="#DC2626" text-anchor="middle">Before: Grade-2 Fatty Liver</text>
+    <text x="155" y="285" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="900" fill="#047857" text-anchor="middle">After 60 Days: Normal Echotexture!</text>
+    <text x="155" y="315" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="600" fill="#4B5563" text-anchor="middle">No Hepatomegaly Seen</text>
+
+    <!-- Message Bubble 2 -->
+    <rect x="15" y="350" width="310" height="110" rx="10" fill="#DCF8C6"/>
+    <text x="25" y="375" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="600" fill="#111827">डॉक्टर भी देखकर हैरान हैं! पेट का</text>
+    <text x="25" y="395" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="600" fill="#111827">भारीपन, गैस और सुस्ती सब खत्म हो गई।</text>
+    <text x="25" y="415" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="800" fill="#047857">माधवबाग टीम को बहुत-बहुत धन्यवाद 🙏</text>
+    <text x="270" y="445" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" fill="#6B7280">10:16 AM ✓✓</text>
+  </g>
+
+  <!-- Chat 2: SGOT/SGPT Normalized -->
+  <g transform="translate(430, 105)" filter="url(#waShadow)">
+    <rect width="340" height="490" rx="14" fill="#FFFFFF"/>
+    <!-- Chat Header -->
+    <rect width="340" height="60" rx="14" fill="#128C7E"/>
+    <circle cx="35" cy="30" r="18" fill="#ECE5DD"/>
+    <text x="35" y="36" font-size="16" text-anchor="middle">👩</text>
+    <text x="65" y="27" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="700" fill="#FFFFFF">सुनीता पाटिल (उम्र 51)</text>
+    <text x="65" y="45" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="500" fill="#DCF8C6">पुणे, महाराष्ट्र • LFT Lab Report</text>
+
+    <!-- Message Bubble 1 -->
+    <rect x="15" y="80" width="280" height="85" rx="10" fill="#DCF8C6"/>
+    <text x="25" y="105" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="600" fill="#111827">सर मेरी लिवर LFT रिपोर्ट आ गई है।</text>
+    <text x="25" y="125" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="800" fill="#B91C1C">पहले SGPT 118 और SGOT 89 था।</text>
+    <text x="25" y="145" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="600" fill="#111827">भूख बिल्कुल नहीं लगती थी।</text>
+    <text x="260" y="155" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" fill="#6B7280">12:30 PM</text>
+
+    <!-- Lab Report Box -->
+    <rect x="15" y="180" width="280" height="155" rx="10" fill="#F8FAFC" stroke="#E2E8F0"/>
+    <rect x="25" y="190" width="260" height="26" rx="4" fill="#1E293B"/>
+    <text x="155" y="208" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle">LIVER FUNCTION TEST (LFT)</text>
+    
+    <text x="35" y="240" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="600" fill="#475569">SGPT (ALT):</text>
+    <text x="140" y="240" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="700" fill="#DC2626">118 U/L</text>
+    <text x="210" y="240" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="800" fill="#047857">→ 32 U/L ✓</text>
+
+    <text x="35" y="270" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="600" fill="#475569">SGOT (AST):</text>
+    <text x="140" y="270" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="700" fill="#DC2626">89 U/L</text>
+    <text x="210" y="270" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="800" fill="#047857">→ 26 U/L ✓</text>
+
+    <text x="35" y="300" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="600" fill="#475569">Bilirubin Total:</text>
+    <text x="140" y="300" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="700" fill="#DC2626">2.1 mg/dl</text>
+    <text x="210" y="300" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="800" fill="#047857">→ 0.8 mg/dl ✓</text>
+
+    <!-- Message Bubble 2 -->
+    <rect x="15" y="350" width="310" height="110" rx="10" fill="#DCF8C6"/>
+    <text x="25" y="375" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="600" fill="#111827">सिर्फ 45 दिन में सब नॉर्मल हो गया!</text>
+    <text x="25" y="395" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="600" fill="#111827">शरीर में स्फूर्ति आ गई है और भूख भी</text>
+    <text x="25" y="415" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="800" fill="#047857">खुलकर लग रही है। Best Liver Tonic!</text>
+    <text x="270" y="445" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" fill="#6B7280">12:35 PM ✓✓</text>
+  </g>
+
+  <!-- Chat 3: COD Trust & Alcohol Detox -->
+  <g transform="translate(800, 105)" filter="url(#waShadow)">
+    <rect width="340" height="490" rx="14" fill="#FFFFFF"/>
+    <!-- Chat Header -->
+    <rect width="340" height="60" rx="14" fill="#128C7E"/>
+    <circle cx="35" cy="30" r="18" fill="#ECE5DD"/>
+    <text x="35" y="36" font-size="16" text-anchor="middle">🧔</text>
+    <text x="65" y="27" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="700" fill="#FFFFFF">मनोज चौहान (उम्र 39)</text>
+    <text x="65" y="45" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="500" fill="#DCF8C6">इंदौर, म.प्र. • COD Verified</text>
+
+    <!-- Message Bubble 1 -->
+    <rect x="15" y="80" width="300" height="100" rx="10" fill="#DCF8C6"/>
+    <text x="25" y="105" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="600" fill="#111827">पार्सल आज सुरक्षित मिल गया।</text>
+    <text x="25" y="125" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="600" fill="#111827">डिलीवरी एजेंट को पार्सल देखकर</text>
+    <text x="25" y="145" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="800" fill="#047857">कैश ऑन डिलीवरी ₹1599 दिया।</text>
+    <text x="25" y="165" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" fill="#4B5563">पैकिंग 100% ओरिजिनल माधवबाग सीलबंद है।</text>
+    <text x="280" y="170" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" fill="#6B7280">3:15 PM</text>
+
+    <!-- Message Bubble 2 -->
+    <rect x="15" y="195" width="310" height="140" rx="10" fill="#DCF8C6"/>
+    <text x="25" y="220" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="600" fill="#111827">मैं पहले बहुत शराब पीता था जिसके कारण</text>
+    <text x="25" y="240" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="800" fill="#B91C1C">लिवर बहुत फैटी व भारी हो गया था।</text>
+    <text x="25" y="260" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="600" fill="#111827">शॉट्स लेते हुए 20 दिन हुए हैं, सुबह का</text>
+    <text x="25" y="280" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="800" fill="#047857">जी मिचलाना व उल्टी जैसा लगना बंद हुआ।</text>
+    <text x="25" y="300" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="600" fill="#111827">ऊर्जा वापस आ गई है।</text>
+    <text x="270" y="325" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" fill="#6B7280">3:20 PM ✓✓</text>
+
+    <!-- Doctor Reply Bubble -->
+    <rect x="35" y="350" width="290" height="95" rx="10" fill="#FFFFFF" stroke="#E2E8F0"/>
+    <text x="45" y="375" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="700" fill="#065F46">माधवबाग मेडिकल टीम:</text>
+    <text x="45" y="395" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="500" fill="#334155">मनोज जी, कृपया पानी भरपूर पिएं</text>
+    <text x="45" y="415" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="500" fill="#334155">और 60 दिनों का कोर्स पूरा करें।</text>
+    <text x="280" y="435" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" fill="#6B7280">3:22 PM</text>
+  </g>
+
+  <!-- Bottom Helper Note -->
+  <text x="600" y="625" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="700" fill="#4B5563" text-anchor="middle">
+    Note: Replace with real WhatsApp screenshot banner if available (1200x650px)
+  </text>
+</svg>

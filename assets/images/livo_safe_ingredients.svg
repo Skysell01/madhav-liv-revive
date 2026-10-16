@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 650" width="100%" height="100%">
+  <defs>
+    <linearGradient id="ingBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FAF6F0"/>
+      <stop offset="100%" stop-color="#EFE6DA"/>
+    </linearGradient>
+    <linearGradient id="herbCard" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#F9FDF9"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#064E3B" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="650" fill="url(#ingBg)"/>
+
+  <!-- Top Header Title -->
+  <rect x="360" y="25" width="480" height="36" rx="18" fill="#E2E8F0" stroke="#CBD5E1" stroke-width="1"/>
+  <text x="600" y="49" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="800" fill="#475569" text-anchor="middle" letter-spacing="2">📸 INGREDIENTS INFOGRAPHIC PLACEHOLDER</text>
+
+  <text x="600" y="100" font-family="'Plus Jakarta Sans', sans-serif" font-size="34" font-weight="900" fill="#064E3B" text-anchor="middle">
+    6 शक्तिशाली हेपाटोप्रोटेक्टिव आयुर्वेदिक औषधियाँ
+  </text>
+  <text x="600" y="130" font-family="'Plus Jakarta Sans', sans-serif" font-size="16" font-weight="600" fill="#475569" text-anchor="middle">
+    क्लिनिकली वैलिडेटेड लिवर रिजेनेरेशन व डिटॉक्स फॉर्मूलेशन
+  </text>
+
+  <!-- 6 Herbs Grid (3 Columns x 2 Rows) -->
+  <!-- 1. Kalmegh -->
+  <g transform="translate(60, 160)" filter="url(#cardShadow)">
+    <rect width="340" height="200" rx="16" fill="url(#herbCard)" stroke="#86EFAC" stroke-width="1.5"/>
+    <circle cx="50" cy="50" r="28" fill="#DCFCE7"/>
+    <text x="50" y="58" font-size="28" text-anchor="middle">🌿</text>
+    <text x="95" y="46" font-family="'Plus Jakarta Sans', sans-serif" font-size="20" font-weight="800" fill="#064E3B">कालमेघ (Kalmegh)</text>
+    <text x="95" y="68" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="700" fill="#15803D">King of Bitters • Andrographis</text>
+    <text x="25" y="115" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="500" fill="#334155" width="290">
+      पित्त रस (Bile Flow) को उत्तेजित कर टॉक्सिन्स को बाहर निकालता है। लिवर सेल्स में सूजन को तुरंत नियंत्रित करता है।
+    </text>
+  </g>
+
+  <!-- 2. Bhumi Amla -->
+  <g transform="translate(430, 160)" filter="url(#cardShadow)">
+    <rect width="340" height="200" rx="16" fill="url(#herbCard)" stroke="#86EFAC" stroke-width="1.5"/>
+    <circle cx="50" cy="50" r="28" fill="#DCFCE7"/>
+    <text x="50" y="58" font-size="28" text-anchor="middle">🌱</text>
+    <text x="95" y="46" font-family="'Plus Jakarta Sans', sans-serif" font-size="20" font-weight="800" fill="#064E3B">भूमि आंवला (Bhumi Amla)</text>
+    <text x="95" y="68" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="700" fill="#15803D">Phyllanthus Niruri</text>
+    <text x="25" y="115" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="500" fill="#334155">
+      बढ़े हुए SGOT, SGPT और बिलिरुबिन को तेजी से सामान्य रेंज में लाने के लिए विश्वप्रसिद्ध आयुर्वेदिक औषधि।
+    </text>
+  </g>
+
+  <!-- 3. Kutki -->
+  <g transform="translate(800, 160)" filter="url(#cardShadow)">
+    <rect width="340" height="200" rx="16" fill="url(#herbCard)" stroke="#86EFAC" stroke-width="1.5"/>
+    <circle cx="50" cy="50" r="28" fill="#DCFCE7"/>
+    <text x="50" y="58" font-size="28" text-anchor="middle">🪵</text>
+    <text x="95" y="46" font-family="'Plus Jakarta Sans', sans-serif" font-size="20" font-weight="800" fill="#064E3B">कुटकी (Kutki)</text>
+    <text x="95" y="68" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="700" fill="#15803D">Picrorhiza Kurroa</text>
+    <text x="25" y="115" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="500" fill="#334155">
+      डैमेज हुए हेपाटोसाइट्स (लिवर सेल्स) को रिपेयर करती है व लिपिड पेरोक्सीडेशन को रोककर फैटी लिवर रिवर्सल में मदद करती है।
+    </text>
+  </g>
+
+  <!-- 4. Punarnava -->
+  <g transform="translate(60, 390)" filter="url(#cardShadow)">
+    <rect width="340" height="200" rx="16" fill="url(#herbCard)" stroke="#86EFAC" stroke-width="1.5"/>
+    <circle cx="50" cy="50" r="28" fill="#DCFCE7"/>
+    <text x="50" y="58" font-size="28" text-anchor="middle">🍃</text>
+    <text x="95" y="46" font-family="'Plus Jakarta Sans', sans-serif" font-size="20" font-weight="800" fill="#064E3B">पुनर्नवा (Punarnava)</text>
+    <text x="95" y="68" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="700" fill="#15803D">Boerhavia Diffusa</text>
+    <text x="25" y="115" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="500" fill="#334155">
+      लिवर और पेट की सूजन को कम कर टॉक्सिन्स को यूरिन के रास्ते बाहर निकालती है व लिवर को नया जीवन देती है।
+    </text>
+  </g>
+
+  <!-- 5. Kasani -->
+  <g transform="translate(430, 390)" filter="url(#cardShadow)">
+    <rect width="340" height="200" rx="16" fill="url(#herbCard)" stroke="#86EFAC" stroke-width="1.5"/>
+    <circle cx="50" cy="50" r="28" fill="#DCFCE7"/>
+    <text x="50" y="58" font-size="28" text-anchor="middle">🌸</text>
+    <text x="95" y="46" font-family="'Plus Jakarta Sans', sans-serif" font-size="20" font-weight="800" fill="#064E3B">कासनी (Kasani / Chicory)</text>
+    <text x="95" y="68" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="700" fill="#15803D">Cichorium Intybus</text>
+    <text x="25" y="115" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="500" fill="#334155">
+      ऑक्सीडेटिव स्ट्रेस से लिवर को सुरक्षित रखती है, भूख को बढ़ाती है और सुस्त लिवर के मेटाबॉलिज्म को तेज करती है।
+    </text>
+  </g>
+
+  <!-- 6. Giloy & Milk Thistle Synergy -->
+  <g transform="translate(800, 390)" filter="url(#cardShadow)">
+    <rect width="340" height="200" rx="16" fill="url(#herbCard)" stroke="#86EFAC" stroke-width="1.5"/>
+    <circle cx="50" cy="50" r="28" fill="#DCFCE7"/>
+    <text x="50" y="58" font-size="28" text-anchor="middle">🛡️</text>
+    <text x="95" y="46" font-family="'Plus Jakarta Sans', sans-serif" font-size="20" font-weight="800" fill="#064E3B">गिलोय व मिल्क थीस्ल</text>
+    <text x="95" y="68" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="700" fill="#15803D">Giloy &amp; Silymarin Synergy</text>
+    <text x="25" y="115" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="500" fill="#334155">
+      शराब, जंक फूड और केमिकल दवाओं से होने वाले लिवर डैमेज को ब्लॉक कर लिवर इम्यूनिटी को मजबूत करता है।
+    </text>
+  </g>
+
+  <text x="600" y="625" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="700" fill="#64748B" text-anchor="middle">
+    Note: Replace with real infographic graphic if available (1200x650px)
+  </text>
+</svg>
