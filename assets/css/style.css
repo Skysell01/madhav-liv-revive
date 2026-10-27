@@ -738,8 +738,8 @@ input, select, textarea {
 }
 .bundle-options-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
 }
 .bundle-card {
   position: relative;

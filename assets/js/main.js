@@ -33,34 +33,25 @@ document.addEventListener('DOMContentLoaded', () => {
   const bundleData = [
     {
       index: 0,
-      title: '1 Pack (Pack of 30 Shots for 30 Days)',
+      title: '1 Pack (30 Days Course - 30 Sachets | 1 Sachet = 20ml)',
       shots: 30,
-      price: 899,
-      original: 1299,
-      discount: '31% की छूट',
-      desc: '1 Month Starter: Pack of 30 Shots for 30 Days'
+      price: 1199,
+      original: 1699,
+      discount: '29% की छूट',
+      desc: '1 Month Starter: 30 Sachets (1 Sachet = 20ml) for 30 Days'
     },
     {
       index: 1,
-      title: '2 Packs (60 Days Course - 2x Pack of 30 Shots for 30 Days)',
+      title: '2 Packs (60 Days Course - 60 Sachets | 1 Sachet = 20ml)',
       shots: 60,
-      price: 1599,
-      original: 2598,
-      discount: '38% की सबसे बड़ी छूट',
-      desc: 'Most Popular: 60 Days Complete Liver Detox & Fatty Liver Cleanse'
-    },
-    {
-      index: 2,
-      title: '4 Packs (120 Days Course - 4x Pack of 30 Shots for 30 Days)',
-      shots: 120,
-      price: 2899,
-      original: 5196,
-      discount: '44% की महा छूट',
-      desc: 'Best Value: 120 Days Deep Hepatocellular Repair & Cirrhosis Defense'
+      price: 1999,
+      original: 3398,
+      discount: '41% की सबसे बड़ी छूट',
+      desc: 'Most Popular: 60 Days Complete Liver Detox (60 Sachets | 1 Sachet = 20ml)'
     }
   ];
 
-  let selectedBundleIndex = 1; // Default: 2 Boxes (Most Popular)
+  let selectedBundleIndex = 1; // Default: 2 Packs (Most Popular)
 
   function updateBundleState(index) {
     selectedBundleIndex = index;
@@ -193,6 +184,14 @@ document.addEventListener('DOMContentLoaded', () => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
       openModal(codModal);
+      if (typeof window.fbq === 'function') {
+        const bundle = bundleData[selectedBundleIndex] || bundleData[1];
+        window.fbq('track', 'InitiateCheckout', {
+          content_name: bundle.title,
+          value: bundle.price,
+          currency: 'INR'
+        });
+      }
     });
   });
 
@@ -263,6 +262,21 @@ document.addEventListener('DOMContentLoaded', () => {
     closeModal(codModal);
     openModal(thankYouModal);
     showToast('✓ Cash on Delivery ऑर्डर दर्ज हो गया है!');
+
+    // Meta Pixel Lead Event Tracking (ID: 1315754011931343)
+    if (typeof window.fbq === 'function') {
+      try {
+        window.fbq('track', 'Lead', {
+          content_name: packTitle,
+          content_category: 'Madhavbaug Liv-Revive Shots',
+          value: amount,
+          currency: 'INR'
+        });
+        console.log('Meta Pixel Lead event tracked successfully:', { packTitle, amount, orderId });
+      } catch (pixelErr) {
+        console.warn('Meta Pixel tracking error:', pixelErr);
+      }
+    }
   }
 
   if (modalCodForm) {

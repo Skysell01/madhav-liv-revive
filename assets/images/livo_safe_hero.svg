@@ -65,14 +65,14 @@
   <g transform="translate(130, 360) rotate(-15)">
     <rect x="0" y="0" width="60" height="150" rx="14" fill="#7E1826" stroke="#DCA06B" stroke-width="2"/>
     <rect x="15" y="-12" width="30" height="16" rx="4" fill="#D97706"/>
-    <text x="30" y="70" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="800" fill="#FFFFFF" text-anchor="middle">30 ml</text>
+    <text x="30" y="70" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="800" fill="#FFFFFF" text-anchor="middle">20 ml</text>
     <text x="30" y="90" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="700" fill="#FCD34D" text-anchor="middle">LIVO</text>
   </g>
 
   <g transform="translate(610, 360) rotate(15)">
     <rect x="0" y="0" width="60" height="150" rx="14" fill="#7E1826" stroke="#DCA06B" stroke-width="2"/>
     <rect x="15" y="-12" width="30" height="16" rx="4" fill="#D97706"/>
-    <text x="30" y="70" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="800" fill="#FFFFFF" text-anchor="middle">30 ml</text>
+    <text x="30" y="70" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="800" fill="#FFFFFF" text-anchor="middle">20 ml</text>
     <text x="30" y="90" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="700" fill="#FCD34D" text-anchor="middle">SHOT</text>
   </g>
 
