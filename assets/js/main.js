@@ -12,7 +12,7 @@
 // ==============================================================================
 // GOOGLE SHEETS WEBHOOK CONFIGURATION
 // ==============================================================================
-const GOOGLE_SHEETS_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbxXE6vxtMT09S1eQDsL0KMEY7nMSsFhYFTc_uX9YamRQeuyv6Xvu5Uowu3pdHVaUkKbwQ/exec';
+const GOOGLE_SHEETS_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbzn66iwlWhbdTqtYHhpWob02sqFGvAJtpnX0HLRMIoaPB0ksfUKSVDc6VYfuu4R71ox7A/exec';
 
 // Local Storage Key & 24 Hours Cooldown (24 * 60 * 60 * 1000 ms)
 const SUBMITTED_CONTACTS_KEY = 'madhavbaug_livo_safe_contacts_24h';
@@ -137,16 +137,36 @@ document.addEventListener('DOMContentLoaded', () => {
     return false;
   }
 
+  function getDuplicateRemainingHours(phone) {
+    const cleanPhone = String(phone).replace(/\D/g, '').slice(-10);
+    const contacts = getSubmittedContacts();
+    const timestamp = contacts[cleanPhone];
+    if (timestamp) {
+      const elapsed = Date.now() - timestamp;
+      if (elapsed < DUPLICATE_COOLDOWN_MS) {
+        return Math.ceil((DUPLICATE_COOLDOWN_MS - elapsed) / (1000 * 60 * 60));
+      }
+    }
+    return 0;
+  }
+
   // Real-time Duplicate Contact Checking on Input
   const modalPhoneInput = document.getElementById('modalCodPhone');
   const duplicateAlert = document.getElementById('modalDuplicateAlert');
+  const duplicateAlertMsg = document.getElementById('modalDuplicateAlertMsg');
 
   if (modalPhoneInput) {
     modalPhoneInput.addEventListener('input', (e) => {
       const val = e.target.value.replace(/\D/g, '').slice(-10);
       if (val.length === 10) {
         if (checkDuplicateContact(val)) {
-          if (duplicateAlert) duplicateAlert.style.display = 'block';
+          if (duplicateAlert) {
+            duplicateAlert.style.display = 'block';
+            const hoursLeft = getDuplicateRemainingHours(val);
+            if (duplicateAlertMsg) {
+              duplicateAlertMsg.textContent = `Wait for ${hoursLeft > 0 ? hoursLeft + 'hr' : '24hr'} to resubmit. Our liver health expert will call you shortly.`;
+            }
+          }
         } else {
           if (duplicateAlert) duplicateAlert.style.display = 'none';
         }
@@ -299,13 +319,22 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      // Check duplicate notice (alert user but proceed so orders/tests never fail)
+      // 2. 24-Hour Duplicate Prevention: Prevent submission and alert the user
       if (checkDuplicateContact(phone)) {
+        const hoursLeft = getDuplicateRemainingHours(phone);
+        const hoursText = hoursLeft > 0 ? `${hoursLeft}hr` : '24hr';
         if (duplicateAlert) {
           duplicateAlert.style.display = 'block';
-          setTimeout(() => { if (duplicateAlert) duplicateAlert.style.display = 'none'; }, 5000);
+          if (duplicateAlertMsg) {
+            duplicateAlertMsg.textContent = `Wait for ${hoursText} to resubmit. Our liver health expert will call you shortly.`;
+          }
+          duplicateAlert.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
-        showToast('ℹ️ आपका ऑर्डर दर्ज किया जा रहा है...');
+        alert(`You have already submitted the form. Wait for 24hr to resubmit.\n\n(आप इस नंबर से पहले ही फॉर्म सबमिट कर चुके हैं। कृपया दोबारा सबमिट करने के लिए 24 घंटे प्रतीक्षा करें। हमारे लिवर हेल्थ एक्सपर्ट आपसे जल्द ही संपर्क करेंगे।)`);
+        showToast('⚠️ You have already submitted the form. Wait for 24hr to resubmit.');
+        const phoneInput = document.getElementById('modalCodPhone');
+        if (phoneInput) phoneInput.focus();
+        return; // PREVENT FORM SUBMISSION COMPLETELY
       }
 
       const submitBtn = document.getElementById('modalSubmitBtn');
@@ -333,13 +362,13 @@ document.addEventListener('DOMContentLoaded', () => {
         pageUrl: window.location.href
       };
 
-      // 2. Post to Google Sheets Webhook
+      // 3. Post to Google Sheets Webhook (Single reliable request to prevent duplicates)
       if (GOOGLE_SHEETS_WEBHOOK_URL && GOOGLE_SHEETS_WEBHOOK_URL.trim() !== '') {
         const url = GOOGLE_SHEETS_WEBHOOK_URL.trim();
         const payloadString = JSON.stringify(leadData);
 
-        // Method 1: text/plain (CORS safelisted, standard for Google Apps Script Web App in no-cors mode)
         try {
+          // Primary Method: text/plain (CORS safelisted, standard for Google Apps Script Web App in no-cors mode)
           await fetch(url, {
             method: 'POST',
             mode: 'no-cors',
@@ -351,26 +380,27 @@ document.addEventListener('DOMContentLoaded', () => {
           });
           console.log('Lead successfully sent to Google Sheets Webhook:', leadData);
         } catch (err) {
-          console.warn('Fetch text/plain attempt warning:', err);
+          console.warn('Primary webhook fetch error, attempting fallback:', err);
+          // Fallback only if primary fetch throws a network exception
+          try {
+            const formParams = new URLSearchParams();
+            Object.keys(leadData).forEach(k => formParams.append(k, leadData[k]));
+            await fetch(url, {
+              method: 'POST',
+              mode: 'no-cors',
+              cache: 'no-cache',
+              headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+              },
+              body: formParams.toString()
+            });
+          } catch (fallbackErr) {
+            console.error('Fallback fetch error:', fallbackErr);
+          }
         }
-
-        // Method 2: Fallback URLSearchParams (e.parameter support)
-        try {
-          const formParams = new URLSearchParams();
-          Object.keys(leadData).forEach(k => formParams.append(k, leadData[k]));
-          fetch(url, {
-            method: 'POST',
-            mode: 'no-cors',
-            cache: 'no-cache',
-            headers: {
-              'Content-Type': 'application/x-www-form-urlencoded'
-            },
-            body: formParams.toString()
-          }).catch(e => console.warn('Fallback fetch warning:', e));
-        } catch (e) {}
       }
 
-      // 3. Mark contact as submitted
+      // 4. Mark contact as submitted in 24-hr local cooldown
       saveSubmittedContact(phone);
 
       // 4. Restore button and show Thank You confirmation modal
